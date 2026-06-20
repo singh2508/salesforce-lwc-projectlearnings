@@ -1,0 +1,61 @@
+<template>
+    <lightning-card title="Conditional Rendering">
+        <div class="slds-p-around_medium"></div>
+                <b>Choose Your Interest:</b>
+        <div>
+            <lightning-input type="Checkbox" label="Shopping" class="shopCheck"  onchange={handleShoppingCheck}>
+            </lightning-input>
+        </div>
+        <div>
+            <lightning-input type="Checkbox" label="Reading" class="readCheck" onchange={handleReadingCheck}>
+            </lightning-input>
+        </div>
+    </lightning-card>
+
+    <template lwc:if={isShoppingChosen}>
+        <lightning-card title="Shopping Sites">
+             <div class="slds-p-around_medium slds-box">
+                <ul>
+                    <li>
+                        <a href="https://www.amazon.in/">🛍️ Amazon</a>
+                    </li>
+                    <li>
+                        <a href="https://www.flipkart.com/">🛍️ Flipkart</a>
+                    </li>
+                    <li>
+                        <a href="https://www.myntra.com/">🛍️ Myantra</a>
+                    </li>
+                    <li>
+                        <a href=https://www.bigbasket.com/>🛍️ BigBasket</a>
+                    </li>
+                    <li>
+                        <a href=https://blinkit.com/>🛍️ Blinkit</a>
+                    </li>
+                </ul>
+
+             </div>
+
+        </lightning-card>
+    </template>
+    <template lwc:elseif={isReadingChosen}>
+        <lightning-card title="Books To Read">
+             <div class="slds-p-around_medium slds-box">
+                <ul>
+                    <li>
+                        <a href="https://www.google.co.in/books/edition/Summary_of_Atomic_Habits/Wo2sEAAAQBAJ?
+                        hl=en&gbpv=1&dq=atomic+habits&printsec=frontcover">
+                            📚 Atomic Habits</a>
+                    </li>
+                    <li>
+                        <a href="https://www.google.co.in/books/edition/Harry_Potter/
+                        abYKXvCwEToC?hl=en&gbpv=1&dq=harry+potter&pg=PR9&printsec=frontcover">
+                     📚 Harry Potter</a>
+                    </li>
+                </ul>
+             </div>
+        </lightning-card>
+    </template>
+    <template lwc:else>
+        <b>Nothing Chosen</b>
+    </template>
+</template>

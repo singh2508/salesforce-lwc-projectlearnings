@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Template Looping">
+        <div class="slds-p-around_medium">
+
+            <!--template looping with objectArray-->
+
+            <template for:each={students} for:item="studentObjects">
+                <div key={studentObjects.RollNo}>
+                    <div class="slds-box">
+                       {studentObjects.Name}<br>
+                       {studentObjects.Average} 
+                    </div>
+                
+                </div>
+
+            </template>
+
+            <!--template looping with Array-->
+            <template for:each={course} for:item="itemCourse">
+                <div key={courseId}></div>
+                {itemCourse}
+            </template>
+            <div>
+               <lightning-input label="Enter Course Name" type="text" onchange={handleCourseChange}></lightning-input> 
+            </div>
+            <div>
+                <lightning-button label="Add" onclick={handleClickCourse}>
+                </lightning-button>
+            </div>
+        </div>
+
+    </lightning-card>
+    
+</template>
